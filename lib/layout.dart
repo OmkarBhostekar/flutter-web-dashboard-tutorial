@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:web_dashboard_tutorial/helpers/responsiveness.dart';
 import 'package:web_dashboard_tutorial/widgets/large_screen.dart';
+import 'package:web_dashboard_tutorial/widgets/side_menu.dart';
 import 'package:web_dashboard_tutorial/widgets/small_screen.dart';
 import 'package:web_dashboard_tutorial/widgets/top_nav.dart';
 
@@ -11,7 +12,9 @@ class SiteLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: SideMenu(),
+      ),
       appBar: topNavigationBar(context, scaffoldKey),
       body: ResponsiveWidget(
         largeScreen: LargeScreen(),
